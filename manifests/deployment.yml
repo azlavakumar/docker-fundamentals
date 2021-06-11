@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8s1-6e54"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8s1-6e54"
+  template:
+    metadata:
+      labels:
+        app: "k8s1-6e54"
+    spec:
+      containers:
+        - name: "k8s1-6e54"
+          image: "lavarepo.azurecr.io/k8s1"
+          ports:
+          - containerPort: 80
